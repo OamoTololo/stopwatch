@@ -1,68 +1,39 @@
-// variables:
-let workTitle = document.getElementById('work');
-let breakTitle = document.getElementById('break');
-
-let workTime = 25;
-let breakTime = 5;
-
-let seconds = "00";
-
-// display:
-window.onload = () => {
-    document.getElementById('minutes').innerHTML = workTime;
-    document.getElementById('seconds').innerHTML = seconds;
-
-    workTitle.classList.add('active');
-}
-// start timer
-function start()
+let [seconds, minutes, hours] = [0,0,0];
+let displayTime = document.getElementById('displayTime');
+let timer = null;
+function stopwatch()
 {
-    // change the button
-    document.getElementById('start').style.display = "none";
-    document.getElementById('reset').style.display = "block";
-    // change the time
-    seconds = 59;
+    seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes++;
 
-    let workMinutes = workTime - 1;
-    let breakMinutes = breakTime - 1;
-
-    let breakCount = 0;
-
-    let timerFunction = () =>
-    {
-        // change the display
-        document.getElementById('minutes').innerHTML = workMinutes;
-        document.getElementById('seconds').innerHTML = seconds;
-
-        // start
-        seconds = seconds -1;
-
-        if (seconds === 0) {
-            workMinutes = workMinutes - 1;
-
-            if (workMinutes === -1) {
-                if (breakCount % 2 === 0) {
-                    // start break
-                    workMinutes = breakMinutes;
-                    breakCount++;
-
-                    // change the panel
-                    workTitle.classList.remove('active');
-                    breakTitle.classList.add('active');
-                } else {
-                    //continue working
-                    workMinutes = workTime;
-                    breakCount++
-
-                    // change the panel
-                    breakTitle.classList.add('active');
-                    workTitle.classList.remove('active');
-                }
-            }
-            seconds = 59
+        if (minutes == 60) {
+            minutes = 0;
+            hours++;
         }
     }
 
-    // start countdown
-    setInterval(timerFunction, 1000) // 1000 = 1s
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    displayTime.innerHTML = h + ":" + m + ":" + s;
+}
+function start()
+{
+    if (timer !== null) {
+        clearInterval(timer);
+    }
+    timer = setInterval(stopwatch, 1000);
+}
+function stop()
+{
+    clearInterval(timer);
+}
+function reset()
+{
+    clearInterval(timer);
+    let [seconds, minutes, hours] = [0,0,0];
+    displayTime.innerHTML = "00:00:00";
 }

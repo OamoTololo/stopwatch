@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Timer</title>
+    <title>Stopwatch</title>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,32 +13,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <section>
-        <div class="container">
-            <h1>Timer</h1>
-
-            <div class="painel">
-                <p id="work">Work</p>
-                <p id="break">Break</p>
-            </div>
-
-            <div class="timer">
-                <div class="circle">
-                    <div class="time">
-                        <p id="minutes"></p>
-                        <p>:</p>
-                        <p id="seconds"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="controls">
-                <button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
-
-                <a id="reset" href="/"><i class="fa-solid fa-arrow-rotate-left"></i></a>
-            </div>
+    <div class="stopwatch">
+        <h1 id="displayTime">00:00:00</h1>
+        <div class="buttons">
+            <img src="images/stop.jpeg" onclick="stop()">
+            <img src="images/play.jpeg" onclick="start()">
+            <img src="images/reset.png" onclick="reset()">
         </div>
-    </section>
+    </div>
     <!-- Script -->
     <script src="./script.js"></script>
 </body>
