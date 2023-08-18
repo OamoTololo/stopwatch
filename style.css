@@ -10,13 +10,14 @@
     --color-shadow: hsl(235, 36%, 35%);
 }
 body {
-    background: var(--color-secondary);
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("images/background3.jpg");
+    background-size: cover;
     font-family: 'Courier Prime', monospace;
 }
 .stopwatch {
     width: 90%;
     max-width: 1100px;
-    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("images/background3.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("images/background2.jpg");
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -24,6 +25,7 @@ body {
     color: var(--color-font);
     margin: 200px auto 0;
     box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+    border-radius: 80px;
 }
 .stopwatch h1 {
     margin-top: 60px;
@@ -35,12 +37,13 @@ body {
     align-items: center;
     justify-content: center;
 }
-.buttons img {
-    width: 50px;
+.buttons i {
+    width: 90%;
     margin: 0 20px;
     cursor: pointer;
+    font-size: 20px;
     border-radius: 50%;
 }
-.buttons img:nth-child(2) {
-    width: 80px;
+.buttons i:nth-child(2) {
+    width: 50%;
 }

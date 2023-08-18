@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="stylesheet" href="./all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -16,9 +16,12 @@
     <div class="stopwatch">
         <h1 id="displayTime">00:00:00</h1>
         <div class="buttons">
-            <img src="images/stop.jpeg" onclick="stop()">
-            <img src="images/play.jpeg" onclick="start()">
-            <img src="images/reset.png" onclick="reset()">
+            <i class="fa-solid fa-stop-circle" onclick="stop()"></i>
+            <i class="fa-solid fa-play" onclick="start()"></i>
+            <i class="fa-solid fa-refresh" onclick="reset()"></i>
+<!--            <img src="images/stop.jpeg" onclick="stop()">-->
+<!--            <img src="images/play.jpeg" onclick="start()">-->
+<!--            <img src="images/reset.png" onclick="reset()">-->
         </div>
     </div>
     <!-- Script -->
